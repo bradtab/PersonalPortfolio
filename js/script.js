@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     container.appendChild(renderer.domElement);
 
     const loader = new THREE.GLTFLoader();
-    loader.load('assets/models/crt_computer_monitor.glb', (gltf) => {
+    loader.load('Assets/Models/crt_computer_monitor/scene.gltf', (gltf) => {
         const pcSetup = gltf.scene;
         scene.add(pcSetup);
         pcSetup.scale.set(1, 1, 1); // Adjust scale if necessary
@@ -71,11 +71,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         console.error(error);
     });
 
-    camera.position.z = 5;
-
+    // Animation loop
     const animate = () => {
         requestAnimationFrame(animate);
         renderer.render(scene, camera);
     };
+
     animate();
 });
