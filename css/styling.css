@@ -156,13 +156,20 @@ html, body {
   gap: 10px;
 }
 
-.sidebar a {
+.sidebar button {
   background: rgba(255, 255, 255, 0.1);
   color: white;
-  text-decoration: none;
+  border: none;
   padding: 10px;
   border-radius: 5px;
   text-align: center;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 16px;
+}
+
+.sidebar button:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .header {
@@ -181,13 +188,20 @@ html, body {
   color: white;
 }
 
-nav a {
-  color: white;
-  margin: 0 10px;
-  text-decoration: none;
+nav {
+  display: flex;
 }
 
-/* Hover Effects */
-.sidebar a:hover, nav a:hover {
-  background: rgba(255, 255, 255, 0.3);
+nav button {
+  color: white;
+  background: none;
+  border: none;
+  margin: 0 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+nav button:hover {
+  color: #ddd;
 }

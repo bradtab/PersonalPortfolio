@@ -38,22 +38,44 @@
     Bradley Tabone
   </div>
   <div class="sidebar">
-    <a href="https://twitter.com">Twitter</a>
-    <a href="https://Instagram.com">Instagram</a>
-    <a href="https://facebook.com">Facebook</a>
-    <a href="https://linkedin.com">LinkedIn</a>
-    <a href="https://github.com">GitHub</a>
+    <button id="twitterButton">Twitter</button>
+    <button id="linkedinButton">LinkedIn</button>
+    <button id="githubButton">GitHub</button>
   </div>
+
   <header class="header">
     <div class="logo">Bradley Tabone</div>
     <nav>
-      <a href="#about">About</a>
-      <a href="#projects">My Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#timeline">Timeline</a>
-      <a href="#contact">Contact</a>
+      <button onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">About</button>
+      <button onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">My Projects</button>
+      <button onclick="document.getElementById('skills').scrollIntoView({behavior: 'smooth'})">Skills</button>
+      <button onclick="document.getElementById('timeline').scrollIntoView({behavior: 'smooth'})">Timeline</button>
+      <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact</button>
     </nav>
   </header>
+
+  <!-- Sections -->
+  <section id="about">
+    <h2>About</h2>
+    <!-- About content -->
+  </section>
+  <section id="projects">
+    <h2>My Projects</h2>
+    <!-- Projects content -->
+  </section>
+  <section id="skills">
+    <h2>Skills</h2>
+    <!-- Skills content -->
+  </section>
+  <section id="timeline">
+    <h2>Timeline</h2>
+    <!-- Timeline content -->
+  </section>
+  <section id="contact">
+    <h2>Contact</h2>
+    <!-- Contact content -->
+  </section>
   <script src="js/script.js"></script>
+  <script src="js/backgroundBubble.js"></script>
 </body>
 </html>
