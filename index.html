@@ -10,75 +10,97 @@
   <link rel="stylesheet" href="css/styling.css">
 </head>
 <body>
-  <div class="gradient-bg">
-    <svg xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <filter id="goo">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-          <feColorMatrix in="blur" mode="matrix" values="
-            1 0 0 0 0
-            0 1 0 0 0
-            0 0 1 0 0
-            0 0 0 20 -8
-          " result="goo" />
-          <feBlend in="SourceGraphic" in2="goo" />
-        </filter>
-      </defs>
-    </svg>
-    <div class="gradients-container">
-      <div class="g1"></div>
-      <div class="g2"></div>
-      <div class="g3"></div>
-      <div class="g4"></div>
-      <div class="g5"></div>
-      <div class="interactive"></div>
+  <div class="overlay"></div>
+
+  <section id="landing" class="vibrant-section">
+    <div class="gradient-bg">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="
+              1 0 0 0 0
+              0 1 0 0 0
+              0 0 1 0 0
+              0 0 0 20 -8
+            " result="goo" />
+            <feBlend in="SourceGraphic" in2="goo" />
+          </filter>
+        </defs>
+      </svg>
+      <div class="gradients-container">
+        <div class="g1"></div>
+        <div class="g2"></div>
+        <div class="g3"></div>
+        <div class="g4"></div>
+        <div class="g5"></div>
+        <div class="interactive"></div>
+      </div>
     </div>
-  </div>
-
-  <div class="text-container">
-    Bradley Tabone
-  </div>
-
-  <div class="sidebar">
-    <button id="twitterButton">Twitter</button>
-    <button id="linkedinButton">LinkedIn</button>
-    <button id="githubButton">GitHub</button>
-    <button id="instagramButton">Instagram</button>
-    <button id="facebookButton">Facebook</button>
-  </div>
-
-  <header class="header">
-    <div class="logo">Bradley Tabone</div>
-    <nav>
-      <button onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">About</button>
-      <button onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">My Projects</button>
-      <button onclick="document.getElementById('skills').scrollIntoView({behavior: 'smooth'})">Skills</button>
-      <button onclick="document.getElementById('timeline').scrollIntoView({behavior: 'smooth'})">Timeline</button>
-      <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact</button>
-    </nav>
-  </header>
-
-  <!-- Sections -->
-  <section id="about">
-    <h2>About</h2>
-    <!-- About content -->
+    <div class="text-container">
+      Bradley Tabone
+    </div>
+    <div class="sidebar">
+      <button id="twitterButton">Twitter</button>
+      <button id="linkedinButton">LinkedIn</button>
+      <button id="githubButton">GitHub</button>
+      <button id="facebookButton">Facebook</button>
+      <button id="instagramButton">Instagram</button>
+    </div>
+    <header class="header">
+      <div class="logo">Bradley Tabone</div>
+      <nav>
+        <button onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">About</button>
+        <button onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">My Projects</button>
+        <button onclick="document.getElementById('skills').scrollIntoView({behavior: 'smooth'})">Skills</button>
+        <button onclick="document.getElementById('timeline').scrollIntoView({behavior: 'smooth'})">Timeline</button>
+        <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact</button>
+      </nav>
+    </header>
   </section>
-  <section id="projects">
+
+  <section id="about" class="about-section">
+    <div class="about-content">
+      <div class="about-description">
+        <h2>About Me</h2>
+        <p class="description">I am a passionate developer with a love for creating dynamic and engaging web experiences. My journey began with a fascination for technology and has led me to work on numerous exciting projects.</p>
+        <p class="description">In my free time, I enjoy solving Rubik's cubes and exploring the latest trends in web design and development. My goal is to combine creativity with technical expertise to build innovative solutions that make a difference.</p>
+      </div>
+      <div class="diagonal-gallery">
+        <div class="column">
+          <span class="label">Programming</span>
+          <img src="assets/images/coding hobby image.jpg" alt="Coding Hobby">
+        </div>
+        <div class="column">
+          <span class="label">Football</span>
+          <img src="assets/images/football hobby image.jpeg" alt="Football Hobby">
+        </div>
+        <div class="column">
+          <span class="label">Gaming</span>
+          <img src="assets/images/gaming hobby image.avif" alt="Gaming Hobby">
+        </div>
+        <div class="column">
+          <span class="label">Gym</span>
+          <img src="assets/images/gym hobby image.avif" alt="Gym Hobby">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="projects" class="projects-section">
     <h2>My Projects</h2>
-    <!-- Projects content -->
+    <div class="projects-grid">
+      <!-- Example Project Card -->
+      <div class="project-card">
+        <div class="project-icon"><img src="assets/images/project-icon.png" alt="Project Icon"></div>
+        <div class="project-title">Project Title</div>
+        <div class="project-caption">Project Caption</div>
+      </div>
+      <!-- Repeat project cards as necessary -->
+    </div>
+    <a href="all-projects.html" class="view-all">View All Projects</a>
   </section>
-  <section id="skills">
-    <h2>Skills</h2>
-    <!-- Skills content -->
-  </section>
-  <section id="timeline">
-    <h2>Timeline</h2>
-    <!-- Timeline content -->
-  </section>
-  <section id="contact">
-    <h2>Contact</h2>
-    <!-- Contact content -->
-  </section>
+
   <script src="js/script.js"></script>
   <script src="js/interactiveBubble.js"></script>
 </body>

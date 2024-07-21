@@ -73,7 +73,7 @@ html, body {
 
 /* Gradient Container */
 .gradients-container {
-  filter: url(#goo) blur(40px);
+  filter: url(#goo) blur(30px);
   width: 100%;
   height: 100%;
 }
@@ -145,6 +145,37 @@ html, body {
   opacity: 0.7;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 0.5s ease;
+}
+
+/* Sections */
+.vibrant-section {
+  height: 100vh;
+  background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+}
+
+.dark-section {
+  height: 100vh;
+  background-color: #121212;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dark-section h2 {
+  font-size: 48px;
+}
+
 /* Sidebar and Header */
 .sidebar {
   position: absolute;
@@ -154,7 +185,7 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  z-index: 1000; /* Ensure it's above other elements */
+  z-index: 1000;
 }
 
 .sidebar button {
@@ -167,8 +198,8 @@ html, body {
   cursor: pointer;
   transition: background 0.3s;
   font-size: 16px;
-  position: relative; /* Ensure they are positioned */
-  z-index: 1000; /* Ensure it's above other elements */
+  position: relative;
+  z-index: 1000;
 }
 
 .sidebar button:hover {
@@ -203,10 +234,183 @@ nav button {
   font-size: 16px;
   cursor: pointer;
   transition: color 0.3s;
-  position: relative; /* Ensure they are positioned */
-  z-index: 1000; /* Ensure it's above other elements */
+  position: relative;
+  z-index: 1000;
 }
 
 nav button:hover {
   color: #ddd;
+}
+
+
+/*Starting about section styling*/
+
+/* About Section */
+.about-section {
+  background-color: #121212;
+  color: white;
+  padding: 100px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.about-description {
+  flex: 1;
+}
+
+.about-description h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.about-description p.description {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.diagonal-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+@media (min-width: 768px) {
+  .diagonal-gallery {
+    flex-direction: row;
+    height: 100vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .diagonal-gallery {
+    flex-direction: row;
+    height: 60vh;
+  }
+}
+
+.column {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  transition: transform 0.5s, flex 0.5s;
+  transform: skewY(-20deg);
+  height: 50vh;
+}
+
+@media (min-width: 768px) {
+  .column {
+    height: auto;
+  }
+}
+
+.column img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+  transform: skewY(20deg);
+}
+
+.column:hover {
+  flex: 2;
+}
+
+.column:hover img {
+  transform: scale(1.1) skewY(20deg);
+}
+
+.label {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) skewY(20deg);
+  transform-origin: top left;
+  font-size: 24px;
+  color: white;
+  z-index: 10;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .label {
+    top: 10px;
+  }
+}
+
+/* Projects section*/
+.projects-section {
+  padding: 100px 50px;
+  text-align: center;
+}
+
+.projects-section h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.project-icon img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.project-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.project-caption {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.view-all {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #444;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.view-all:hover {
+  background-color: #555;
 }

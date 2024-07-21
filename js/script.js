@@ -1,39 +1,52 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("Script loaded and DOMContentLoaded event fired.");
+    const loader = document.getElementById('loader');
+    const overlay = document.querySelector('.overlay');
+  
+    // Show loader on page load
+    document.body.classList.add('loading');
+  
+    // Hide loader once the page is fully loaded
+    window.addEventListener('load', () => {
+      document.body.classList.remove('loading');
+      loader.style.display = 'none';
+    });
 
-    const twitterButton = document.getElementById('twitterButton');
-    const linkedinButton = document.getElementById('linkedinButton');
-    const githubButton = document.getElementById('githubButton');
-    const instagramButton = document.getElementById('instagramButton');
-    const facebookButton = document.getElementById('facebookButton');
+  // Social Buttons Event Listeners
+  const socialButtons = [
+    { id: 'twitterButton', url: 'https://twitter.com/Bradtab05' },
+    { id: 'linkedinButton', url: 'https://linkedin.com' },
+    { id: 'githubButton', url: 'https://github.com/bradtab' },
+    { id: 'facebookButton', url: 'https://facebook.com/bradley.tabone.5' },
+    { id: 'instagramButton', url: 'https://instagram.com/bradleytabone_13' },
+  ];
 
-    if (twitterButton) {
-        twitterButton.addEventListener('click', () => {
-            window.open('https://twitter.com/Bradtab05', '_blank');
-        });
-    } 
-
-    if (linkedinButton) {
-        linkedinButton.addEventListener('click', () => {
-            window.open('https://linkedin.com/in/bradley-tabone-68665231a', '_blank');
-        });
+  socialButtons.forEach(button => {
+    const btn = document.getElementById(button.id);
+    if (btn) {
+      btn.addEventListener('click', () => window.open(button.url, '_blank'));
     }
-    
-    if (githubButton) {
-        githubButton.addEventListener('click', () => {
-            window.open('https://github.com/bradtab', '_blank');
-        });
-    } 
+  });
 
-    if (instagramButton) {
-        instagramButton.addEventListener('click', () => {
-            window.open('https://instagram.com/bradleytabone_13', '_blank');
-        });
-    } 
+  // Scroll Animation for Transition
+  const sections = document.querySelectorAll('section');
+    let currentSectionIndex = 0;
 
-    if (facebookButton) {
-        facebookButton.addEventListener('click', () => {
-            window.open('https://facebook.com/bradley.tabone.5', '_blank');
-        });
-    } 
+    function scrollToSection(index) {
+        if (index < 0 || index >= sections.length) return;
+        sections[index].scrollIntoView({ behavior: 'smooth' });
+        currentSectionIndex = index;
+    }
+
+    window.addEventListener('wheel', (event) => {
+        if (event.deltaY > 0 && currentSectionIndex < sections.length - 1) {
+            scrollToSection(currentSectionIndex + 1);
+        } else if (event.deltaY < 0 && currentSectionIndex > 0) {
+            scrollToSection(currentSectionIndex - 1);
+        }
+    });
+
+    const navbarLinks = document.querySelectorAll('nav button');
+    navbarLinks.forEach((link, index) => {
+        link.addEventListener('click', () => scrollToSection(index));
+    });
 });

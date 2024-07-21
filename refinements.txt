@@ -1,0 +1,5 @@
+When done i would like to refine these following things.
+
+Typography
+Design for the buttons in the navbar
+Maybe actually creating a logo and after this implementing an animation with the logo for a loading screen
